@@ -23,3 +23,4 @@
 //         this._alto=alto;
 //     }
 // }
+//# sourceMappingURL=figura.js.map

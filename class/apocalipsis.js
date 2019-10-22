@@ -8,3 +8,4 @@
 //         return Apocalipsis.instancia;
 //     }
 // }
+//# sourceMappingURL=apocalipsis.js.map

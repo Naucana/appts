@@ -21,3 +21,4 @@
 //         return `Datos de la persona: ${this.nombre}, ROL:${this.rol}, EDAD:${this.edad}, DNI:${Persona.dni}`;
 //     }
 // }
+//# sourceMappingURL=persona.js.map

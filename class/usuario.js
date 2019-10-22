@@ -12,3 +12,4 @@
 //         this.edad = edad;        
 //     }
 // }
+//# sourceMappingURL=usuario.js.map
