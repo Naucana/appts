@@ -1,16 +1,18 @@
-// class Usuario extends Persona{
-//     private idUsuario: number;
+import { Persona } from './persona';
 
-//     constructor(idUsuario: number, nombre: string, rol: string, edad: number){
-//         super(nombre,rol,edad);
-//         this.idUsuario = idUsuario;
-//     }
+export class Usuario extends Persona{
+    private idUsuario: number;
 
-//     toString(): string{
-//         return super.toString() + "id: " + this.idUsuario;
-//     }
+    constructor(idUsuario: number, nombre: string, rol: string, edad: number){
+        super(nombre,rol,edad);
+        this.idUsuario = idUsuario;
+    }
 
-//     crearEdad(edad : number){
-//         this.edad = edad;        
-//     }
-// }
+    toString(): string{
+        return super.toString() + "id: " + this.idUsuario;
+    }
+
+    crearEdad(edad : number){
+        this.edad = edad;        
+    }
+}

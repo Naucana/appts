@@ -1,26 +1,26 @@
 "use strict";
-// class Figura{
-//     private _ancho:number = 0;
-//     private _alto:number = 0;
-//     constructor(ancho?:number, alto?:number){
-//         if (ancho){
-//             this._ancho = ancho;
-//         }
-//         if (alto){
-//             this._alto = alto;
-//         }
-//     }
-//     get ancho():number{
-//         return this._ancho;
-//     }
-//     get alto():number{
-//         return this._alto;
-//     }
-//     set ancho(ancho:number){
-//         this._ancho=ancho;
-//     }
-//     set alto(alto:number){
-//         this._alto=alto;
-//     }
-// }
+class Figura {
+    constructor(ancho, alto) {
+        this._ancho = 0;
+        this._alto = 0;
+        if (ancho) {
+            this._ancho = ancho;
+        }
+        if (alto) {
+            this._alto = alto;
+        }
+    }
+    get ancho() {
+        return this._ancho;
+    }
+    set ancho(ancho) {
+        this._ancho = ancho;
+    }
+    get alto() {
+        return this._alto;
+    }
+    set alto(alto) {
+        this._alto = alto;
+    }
+}
 //# sourceMappingURL=figura.js.map

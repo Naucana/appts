@@ -1,54 +1,13 @@
+import { Usuario } from './class/usuario';
+
+
 console.log("Hola Mundo");
 
 let variable: any = "Pruebas";
 let numero: string = <string>variable.length;
 console.log(numero);
 
-abstract class Persona {
-    private nombre: string;
-    private rol: string;
-    private _edad: number;
-    private static dni: number = 0;
-
-    constructor(nombre: string, rol: string, edad: number) {
-        this.nombre = nombre;
-        this.rol = rol;
-        this._edad = edad;
-        Persona.dni += 1;
-    }
-
-    get edad(): number {
-        return this._edad;
-    }
-
-    set edad(edad: number) {
-        this._edad = edad;
-    }
-
-    abstract crearEdad(edad: number): void;
-
-    toString(): string {
-        return `Datos de la persona: ${this.nombre}, ROL:${this.rol}, EDAD:${this.edad}, DNI:${Persona.dni}`;
-    }
-}
-
-class Usuario extends Persona {
-    private idUsuario: number;
-
-    constructor(idUsuario: number, nombre: string, rol: string, edad: number) {
-        super(nombre, rol, edad);
-        this.idUsuario = idUsuario;
-    }
-
-    toString(): string {
-        return super.toString() + "id: " + this.idUsuario;
-    }
-
-    crearEdad(edad: number) {
-        this.edad = edad;
-    }
-}
-
+// Ejemplos con la clase usuario, la cual extiende de la clase abstracta Persona
 let u1: Usuario;
 u1 = new Usuario(1, "Antonio", "Direccion", 40);
 console.log(u1.toString());
@@ -62,52 +21,10 @@ u3 = new Usuario(3, "Verdiro", "Direccion", 40);
 console.log(u3.toString());
 
 
-class Figura {
-    private _ancho: number = 0;
-    private _alto: number = 0;
 
-    constructor(ancho?: number, alto?: number) {
-        if (ancho) {
-            this._ancho = ancho;
-        }
-        if (alto) {
-            this._alto = alto;
-        }
-    }
-    get ancho(): number {
-        return this._ancho;
-    }
-    get alto(): number {
-        return this._alto;
-    }
-    set ancho(ancho: number) {
-        this._ancho = ancho;
-    }
-    set alto(alto: number) {
-        this._alto = alto;
-    }
-}
-
-let fig = new Figura;
-fig.ancho = 10;
-fig.alto = 5;
-console.log(fig.ancho + "x" + fig.alto);
-
-class Apocalipsis {
-    static instancia: Apocalipsis;
-
-    private constructor(public nombre: string) { }
-
-    static getInstance() {
-        if (!Apocalipsis.instancia)
-            Apocalipsis.instancia = new Apocalipsis("The End!");
-        return Apocalipsis.instancia;
-    }
-}
-
+// Ejemplo con la clase singleton Apocalipsis
 let apc: Apocalipsis = Apocalipsis.getInstance();
 console.log(apc.nombre);
-
 
 
 interface Movimiento {
@@ -234,74 +151,32 @@ class Saludo {
 console.log(Saludo.creaSaludo());
 console.log(Saludo.creaSaludo("Gilipollas"));
 
-abstract class Figuras {
-    _ancho: number = 0;
-    _alto: number = 0;
 
-    constructor(ancho?: number, alto?: number) {
-        if (ancho) {
-            this._ancho = ancho;
-        }
-        if (alto) {
-            this._alto = alto;
-        }
-    }
+// Ejemplo con la clase Figura
+// let fig = new Figura; 
+// fig.ancho = 10;
+// fig.alto = 5;
+// console.log(fig.ancho + "x" + fig.alto);
+// La clase Figura pasa a ser abstracta para los ejemplos siguientes, por tanto, el ejemplo anterior queda invalidado porque no podemos llamar al constructor de una clase abstracta
+let cuadrado = new Rectangulo(6, 6);
+let rectangulo = new Rectangulo(10, 5);
+let trianguloRectangulo = new Triangulo(7,5);
+let circunferencia = new Circulo(6);
+let trianguloIsosceles = new Triangulo(4,8);
+let rectangulo2 = new Rectangulo(17,5);
 
-    get ancho(): number {
-        return this._ancho
-    }
-    set ancho(ancho: number) {
-        this._ancho = ancho;
-    }
-    get alto(): number {
-        return this._alto;
-    }
-    set alto(alto: number) {
-        this._alto = alto;
-    }
 
-    abstract area(): number;
-}
+let listaFiguras: Figura[] = new Array()//[];
+listaFiguras.push(cuadrado);
+listaFiguras.push(rectangulo);
+listaFiguras.push(trianguloIsosceles);
+listaFiguras.push(trianguloRectangulo);
+listaFiguras.push(rectangulo2);
+listaFiguras.push(circunferencia);
 
-class Rectangulo extends Figuras {
-    constructor(ancho: number, alto: number) {
-        super(ancho, alto);
-    }
-
-    area(): number {
-        return this.ancho * this.alto;
-    }
-
-    dibujar(): string {
-        let dibujo: string = '';
-        for (let i = 0; i < this.alto; i++) {
-            for (let j = 0; j < this.ancho; j++) {
-                dibujo = dibujo + ' *';
-            }
-            dibujo = dibujo + "\n";
-        }
-        return dibujo;
-    }
-}
-
-class Triangulo extends Figuras {
-    area(): number {
-        return (this.ancho * this.alto) / 2;
-    }
-
-    constructor(ancho: number, alto: number) {
-        super(ancho, alto);
-    }
-}
-class Circulo extends Figuras {
-    area(): number {
-        return (Math.PI * Math.pow(this.ancho / 2, 2));
-    }
-
-    constructor(ancho: number) {
-        super(ancho/2);
-    }
-}
-
-let cuadrado = new Rectangulo(6, 4);
-console.log(cuadrado.dibujar());
+listaFiguras.forEach(element => {
+    console.log("El área del ", element, " es ",  element.area)
+    // if (typeof element === typeof Rectangulo){
+    //     dibujar();
+    // }
+});
