@@ -52,10 +52,10 @@ let listaCoches = {
 };
 // let {c1,c2,c3} = listaCoches;
 // console.log(c3);
-// let {c1,c2:familiar,c3} = listaCoches;
-// console.log(familiar);
-let { c1, c2: familiar, c3, c4 = "Citroen" } = listaCoches;
-console.log(c4);
+let { c1, c2: familiar, c3 } = listaCoches;
+console.log(familiar);
+// let { c1, c2: familiar, c3, c4 = "Citroen" } = listaCoches;
+// console.log(c4);
 function palabrasCapitalizar(nombre, apellido, capitalizado = true) {
     if (apellido) {
         if (capitalizado) {

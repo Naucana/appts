@@ -22,6 +22,6 @@ export abstract class Persona {
     abstract crearEdad(edad : number): void;
 
     toString(): string {
-        return `Datos de la persona: ${this.nombre}, ROL:${this.rol}, EDAD:${this.edad}, DNI:${Persona.dni}`;
+        return `Datos de la persona: ${this.nombre}, ROL: ${this.rol}, EDAD: ${this.edad}, DNI: ${Persona.dni}`;
     }
 }

@@ -9,10 +9,10 @@ export class Usuario extends Persona{
     }
 
     toString(): string{
-        return super.toString() + "id: " + this.idUsuario;
+        return super.toString() + " id: " + this.idUsuario;
     }
 
     crearEdad(edad : number){
-        this.edad = edad;        
+        this.edad = edad;
     }
 }

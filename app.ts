@@ -3,9 +3,7 @@ import { Usuario } from './class/usuario';
 
 console.log("Hola Mundo");
 
-let variable: any = "Pruebas";
-let numero: string = <string>variable.length;
-console.log(numero);
+
 
 // Ejemplos con la clase usuario, la cual extiende de la clase abstracta Persona
 let u1: Usuario;
@@ -22,10 +20,6 @@ console.log(u3.toString());
 
 
 
-// Ejemplo con la clase singleton Apocalipsis
-let apc: Apocalipsis = Apocalipsis.getInstance();
-console.log(apc.nombre);
-
 
 interface Movimiento {
     (velocidadInicio: number, aceleracion: number): number;
@@ -35,89 +29,35 @@ let calVelocidad: Movimiento = function (vIni: number, acc: number) {
     return vIni + acc;
 }
 
-let Pais: { capital: string, idioma: string, CEE: boolean, getCapital: () => string } = {
-    capital: "Portugal",
-    idioma: "PT",
-    CEE: true,
-    getCapital() {
-        return this.capital;
-    }
-}
-
-type Paises = {
-    capital: string,
-    idioma: string,
-    CEE: boolean,
-    getCapital: () => string;
-}
-
-let portugal: Paises = {
-    capital: "Portugal",
-    idioma: "PT",
-    CEE: true,
-    getCapital() {
-        return this.capital;
-    }
-}
 
 
-let varios: string | number | boolean;
-
-varios = "Esto es string";
-console.log(typeof varios);
-
-varios = 33;
-console.log(typeof varios);
-
-varios = true;
-console.log(typeof varios);
+// Ejemplo con la clase singleton Apocalipsis - App5
+let apc: Apocalipsis = Apocalipsis.getInstance();
+console.log(apc.nombre);
 
 
-// Destructuracion
-let listaCoches = {
-    c1: "ford",
-    c2: "renault",
-    c3: "seat"
-}
-
-// let {c1,c2,c3} = listaCoches;
-// console.log(c3);
-
-// let {c1,c2:familiar,c3} = listaCoches;
-// console.log(familiar);
-
-let { c1, c2: familiar, c3, c4 = "Citroen" } = listaCoches;
-console.log(c4);
-
-
-function palabrasCapitalizar(nombre: string, apellido?: string, capitalizado: boolean = true): string {
-    if (apellido) {
-        if (capitalizado) {
-            return capitalizar(nombre) + " " + capitalizar(apellido);
+// Creacion de clase con metodo estatico que pueda recibir un parametro o no - App6
+class Saludo {
+    static creaSaludo(nombre?: string) {
+        if (nombre) {
+            return `Hola ${nombre}`;
         } else {
-            return nombre + " " + apellido;
-        }
-    } else {
-        if (capitalizado) {
-            return capitalizar(nombre);
-        } else {
-            return nombre;
+            return `No hablo con desconocidos`;
         }
     }
 }
 
-function capitalizar(palabra: string): string {
-    return palabra.charAt(0).toUpperCase() + palabra.substring(1).toLowerCase();
-}
+console.log(Saludo.creaSaludo());
+console.log(Saludo.creaSaludo("Gilipollas"));
 
 
 function correcto() {
-    console.log("TOdo correcto!");
+    console.log("Todo correcto!");
 }
 
 
 function incorrecto() {
-    console.log("TOdo Maaaaal!");
+    console.log("Todo Maaaaal!");
 }
 
 let promesa = new Promise((resolve: Function, reject: Function) => {
@@ -138,21 +78,10 @@ promesa.then(correcto, incorrecto);
 console.log("después de la llamada");
 
 
-class Saludo {
-    static creaSaludo(nombre?: string) {
-        if (nombre) {
-            return `Hola ${nombre}`;
-        } else {
-            return `No hablo con desconocidos`;
-        }
-    }
-}
-
-console.log(Saludo.creaSaludo());
-console.log(Saludo.creaSaludo("Gilipollas"));
 
 
-// Ejemplo con la clase Figura
+// Ejemplo con la clase Figura. Página 2 de las diapos.
+
 // let fig = new Figura; 
 // fig.ancho = 10;
 // fig.alto = 5;
@@ -160,10 +89,10 @@ console.log(Saludo.creaSaludo("Gilipollas"));
 // La clase Figura pasa a ser abstracta para los ejemplos siguientes, por tanto, el ejemplo anterior queda invalidado porque no podemos llamar al constructor de una clase abstracta
 let cuadrado = new Rectangulo(6, 6);
 let rectangulo = new Rectangulo(10, 5);
-let trianguloRectangulo = new Triangulo(7,5);
+let trianguloRectangulo = new Triangulo(7, 5);
 let circunferencia = new Circulo(6);
-let trianguloIsosceles = new Triangulo(4,8);
-let rectangulo2 = new Rectangulo(17,5);
+let trianguloIsosceles = new Triangulo(4, 8);
+let rectangulo2 = new Rectangulo(17, 5);
 
 
 let listaFiguras: Figura[] = new Array()//[];
@@ -175,7 +104,7 @@ listaFiguras.push(rectangulo2);
 listaFiguras.push(circunferencia);
 
 listaFiguras.forEach(element => {
-    console.log("El área del ", element, " es ",  element.area)
+    console.log("El área del ", element, " es ", element.area);
     // if (typeof element === typeof Rectangulo){
     //     dibujar();
     // }
