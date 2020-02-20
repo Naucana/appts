@@ -1,4 +1,7 @@
-class Triangulo extends Figura {
+import { Figura } from './figura';
+
+
+export class Triangulo extends Figura {
     area(): number {
         return (this.ancho * this.alto) / 2;
     }

@@ -1,5 +1,7 @@
 "use strict";
-class Triangulo extends Figura {
+Object.defineProperty(exports, "__esModule", { value: true });
+const figura_1 = require("./figura");
+class Triangulo extends figura_1.Figura {
     area() {
         return (this.ancho * this.alto) / 2;
     }
@@ -7,4 +9,5 @@ class Triangulo extends Figura {
         super(ancho, alto);
     }
 }
+exports.Triangulo = Triangulo;
 //# sourceMappingURL=triangulo.js.map

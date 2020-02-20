@@ -1,7 +1,24 @@
 import { Usuario } from './class/usuario';
+import { Apocalipsis } from './class/apocalipsis';
+import { Circulo } from './class/circulo';
+import { Rectangulo } from './class/rectangulo';
+import { Triangulo } from './class/triangulo';
 
 
-console.log("Hola Mundo");
+let listaFiguras: Rectangulo[] | Triangulo[] | Circulo[] = new Array();
+listaFiguras.push(new Rectangulo(6, 6));
+listaFiguras.push(new Rectangulo(10, 5));
+listaFiguras.push(new Triangulo(7, 5));
+listaFiguras.push(new Triangulo(4, 8));
+listaFiguras.push(new Rectangulo(17, 5));
+listaFiguras.push(new Circulo(6));
+
+for(let element of listaFiguras){
+    console.log("El área del ", element, " es ", element.area());
+    if (element.dibujar){
+        element.dibujar();
+    }
+};
 
 
 
@@ -76,36 +93,3 @@ let promesa = new Promise((resolve: Function, reject: Function) => {
 
 promesa.then(correcto, incorrecto);
 console.log("después de la llamada");
-
-
-
-
-// Ejemplo con la clase Figura. Página 2 de las diapos.
-
-// let fig = new Figura; 
-// fig.ancho = 10;
-// fig.alto = 5;
-// console.log(fig.ancho + "x" + fig.alto);
-// La clase Figura pasa a ser abstracta para los ejemplos siguientes, por tanto, el ejemplo anterior queda invalidado porque no podemos llamar al constructor de una clase abstracta
-let cuadrado = new Rectangulo(6, 6);
-let rectangulo = new Rectangulo(10, 5);
-let trianguloRectangulo = new Triangulo(7, 5);
-let circunferencia = new Circulo(6);
-let trianguloIsosceles = new Triangulo(4, 8);
-let rectangulo2 = new Rectangulo(17, 5);
-
-
-let listaFiguras: Figura[] = new Array()//[];
-listaFiguras.push(cuadrado);
-listaFiguras.push(rectangulo);
-listaFiguras.push(trianguloIsosceles);
-listaFiguras.push(trianguloRectangulo);
-listaFiguras.push(rectangulo2);
-listaFiguras.push(circunferencia);
-
-listaFiguras.forEach(element => {
-    console.log("El área del ", element, " es ", element.area);
-    // if (typeof element === typeof Rectangulo){
-    //     dibujar();
-    // }
-});

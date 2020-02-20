@@ -7,7 +7,7 @@ class Usuario extends persona_1.Persona {
         this.idUsuario = idUsuario;
     }
     toString() {
-        return super.toString() + "id: " + this.idUsuario;
+        return super.toString() + " id: " + this.idUsuario;
     }
     crearEdad(edad) {
         this.edad = edad;

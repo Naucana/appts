@@ -1,4 +1,4 @@
-class Apocalipsis{
+export class Apocalipsis{
     static instancia:Apocalipsis;
 
     private constructor(public nombre: string){}

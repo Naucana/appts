@@ -1,6 +1,6 @@
-abstract class Figura {
-    _ancho: number = 0;
-    _alto: number = 0;
+export abstract class Figura {
+    private _ancho: number = 0;
+    private _alto: number = 0;
 
     constructor(ancho?: number, alto?: number) {
         if (ancho) {
@@ -11,16 +11,16 @@ abstract class Figura {
         }
     }
 
-    get ancho(): number {
+    public get ancho(): number {
         return this._ancho
     }
-    set ancho(ancho: number) {
+    public set ancho(ancho: number) {
         this._ancho = ancho;
     }
-    get alto(): number {
+    public get alto(): number {
         return this._alto;
     }
-    set alto(alto: number) {
+    public set alto(alto: number) {
         this._alto = alto;
     }
 

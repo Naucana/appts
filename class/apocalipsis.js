@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class Apocalipsis {
     constructor(nombre) {
         this.nombre = nombre;
@@ -9,4 +10,5 @@ class Apocalipsis {
         return Apocalipsis.instancia;
     }
 }
+exports.Apocalipsis = Apocalipsis;
 //# sourceMappingURL=apocalipsis.js.map

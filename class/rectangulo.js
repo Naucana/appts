@@ -1,5 +1,7 @@
 "use strict";
-class Rectangulo extends Figura {
+Object.defineProperty(exports, "__esModule", { value: true });
+const figura_1 = require("./figura");
+class Rectangulo extends figura_1.Figura {
     constructor(ancho, alto) {
         super(ancho, alto);
     }
@@ -14,7 +16,8 @@ class Rectangulo extends Figura {
             }
             dibujo = dibujo + "\n";
         }
-        return dibujo;
+        console.log(dibujo);
     }
 }
+exports.Rectangulo = Rectangulo;
 //# sourceMappingURL=rectangulo.js.map

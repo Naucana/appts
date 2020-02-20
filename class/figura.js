@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class Figura {
     constructor(ancho, alto) {
         this._ancho = 0;
@@ -23,4 +24,5 @@ class Figura {
         this._alto = alto;
     }
 }
+exports.Figura = Figura;
 //# sourceMappingURL=figura.js.map

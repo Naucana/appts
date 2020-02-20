@@ -1,4 +1,7 @@
-class Rectangulo extends Figura {
+import { Figura } from './figura';
+
+
+export class Rectangulo extends Figura {
     constructor(ancho: number, alto: number) {
         super(ancho, alto);
     }
@@ -7,7 +10,7 @@ class Rectangulo extends Figura {
         return this.ancho * this.alto;
     }
 
-    dibujar(): string {
+    dibujar() {
         let dibujo: string = '';
         for (let i = 0; i < this.alto; i++) {
             for (let j = 0; j < this.ancho; j++) {
@@ -15,6 +18,6 @@ class Rectangulo extends Figura {
             }
             dibujo = dibujo + "\n";
         }
-        return dibujo;
+        console.log(dibujo);
     }
 }

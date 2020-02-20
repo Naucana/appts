@@ -1,4 +1,7 @@
-class Circulo extends Figura {
+import { Figura } from './figura';
+
+
+export class Circulo extends Figura {
     area(): number {
         return (Math.PI * Math.pow(this.ancho, 2));
     }

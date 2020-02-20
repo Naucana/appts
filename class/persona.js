@@ -14,7 +14,7 @@ class Persona {
         this._edad = edad;
     }
     toString() {
-        return `Datos de la persona: ${this.nombre}, ROL:${this.rol}, EDAD:${this.edad}, DNI:${Persona.dni}`;
+        return `Datos de la persona: ${this.nombre}, ROL: ${this.rol}, EDAD: ${this.edad}, DNI: ${Persona.dni}`;
     }
 }
 exports.Persona = Persona;
