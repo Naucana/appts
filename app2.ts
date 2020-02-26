@@ -7,6 +7,7 @@ let Pais: { capital: string, idioma: string, CEE: boolean, getCapital: () => str
     }
 }
 
+// Utilizacion de Type
 type Paises = {
     capital: string,
     idioma: string,
@@ -14,8 +15,9 @@ type Paises = {
     getCapital: () => string;
 }
 
+// AutoDefinicion
 let portugal: Paises = {
-    capital: "Portugal",
+    capital: "Lisboa",
     idioma: "PT",
     CEE: true,
     getCapital() {
@@ -23,9 +25,10 @@ let portugal: Paises = {
     }
 }
 
+console.log(Pais.getCapital());
+console.log(portugal.getCapital());
 
-
-// Deteccion de tipos con typeOf. Dconstruccion App2
+// Deteccion de tipos con typeOf.
 let varios: string | number | boolean;
 
 varios = "Esto es string";
@@ -38,16 +41,14 @@ varios = true;
 console.log(typeof varios);
 
 
-// Destructuracion de objetos
-
-// Desmontamos objetos en sus partes
+// Deconstruccion de objetos en sus partes
 let listaCoches = {
     c1: "ford",
     c2: "renault",
     c3: "seat"
 }
 
-// let {c1,c2,c3} = listaCoches;
+// let { c1, c2, c3 } = listaCoches;
 // console.log(c3);
 
 let { c1, c2: familiar, c3 } = listaCoches;
@@ -61,7 +62,7 @@ console.log(familiar);
 let frutas: string[] = ["melon", "sandia", "aguacate", "platano"];
 let [fg, fr, fa, pl] = frutas;
 
-console.log(fr);
+console.log(fa);
 
 let [, sfr, , spl] = frutas;
 console.log(sfr);
